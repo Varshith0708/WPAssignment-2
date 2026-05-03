@@ -1,41 +1,51 @@
-<template>
+﻿<template>
   <div class="container my-4">
-    <div class="card shadow-sm">
-      <div class="card-header bg-warning text-dark">
-        <h4 class="mb-0">Update Employee (axios PUT)</h4>
+    <div class="card panel-card h-100">
+      <div class="card-header">
+        <div class="d-flex align-items-start justify-content-between flex-wrap gap-3">
+          <div>
+            <h4 class="mb-1">Update Employee</h4>
+            <p class="text-muted small mb-0">Select an employee and update details instantly.</p>
+          </div>
+          <span class="badge badge-soft-warning">PUT</span>
+        </div>
       </div>
       <div class="card-body">
-        <table class="table table-bordered table-hover">
-          <thead class="table-warning">
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Designation</th>
-              <th>Department</th>
-              <th>Salary</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="item in list" :key="item.id">
-              <td>{{ item.id }}</td>
-              <td>{{ item.name }}</td>
-              <td>{{ item.designation }}</td>
-              <td>{{ item.department }}</td>
-              <td>{{ item.salary }}</td>
-              <td>
-                <button class="btn btn-warning btn-sm" @click="editItem(item)">Edit</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive table-custom mb-4">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in list" :key="item.id">
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.designation }}</td>
+                <td>{{ item.department }}</td>
+                <td>{{ item.salary }}</td>
+                <td>
+                  <button class="btn btn-brand-warning btn-sm" @click="editItem(item)">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <!-- Edit Section -->
-        <div class="card mt-4 border-warning" v-if="editData.id">
-          <div class="card-header bg-warning text-dark">
-            <h5 class="mb-0">Edit Employee</h5>
-          </div>
+        <div class="card panel-card" v-if="editData.id">
           <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div>
+                <h5 class="mb-1">Edit Employee</h5>
+                <p class="text-muted small mb-0">Update the current employee record.</p>
+              </div>
+            </div>
 
             <div class="mb-3">
               <label class="form-label">Name</label>
@@ -57,8 +67,10 @@
               <input class="form-control" type="number" v-model="editData.salary" placeholder="Salary" />
             </div>
 
-            <button class="btn btn-success" @click="updateData">Update</button>
-            <button class="btn btn-secondary ms-2" @click="editData = { id: null }">Cancel</button>
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-brand" @click="updateData">Update</button>
+              <button class="btn btn-soft-secondary" @click="editData = { id: null }">Cancel</button>
+            </div>
           </div>
         </div>
 

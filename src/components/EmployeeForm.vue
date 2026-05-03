@@ -1,8 +1,14 @@
 <template>
   <div class="container my-4">
-    <div class="card shadow-sm">
-      <div class="card-header bg-primary text-white">
-        <h4 class="mb-0">Create Employee (axios POST)</h4>
+    <div class="card panel-card h-100">
+      <div class="card-header">
+        <div class="d-flex align-items-start justify-content-between flex-wrap gap-3">
+          <div>
+            <h4 class="mb-1">Create Employee</h4>
+            <p class="text-muted small mb-0">Add a new employee record instantly.</p>
+          </div>
+          <span class="badge badge-soft-primary">POST</span>
+        </div>
       </div>
       <div class="card-body">
         <form @submit="postData">
@@ -27,7 +33,7 @@
             <input type="number" class="form-control" placeholder="Enter salary" v-model="employee.salary" />
           </div>
 
-          <button type="submit" class="btn btn-primary">Add Employee</button>
+          <button type="submit" class="btn btn-brand w-100 mt-2">Add Employee</button>
 
         </form>
       </div>
