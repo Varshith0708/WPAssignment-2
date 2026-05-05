@@ -56,6 +56,10 @@ npm run lint
 - Uses `axios` to communicate with `https://69e9b67515c7e2d512689a9a.mockapi.io/assignment`
 - Bootstrap is loaded from `src/main.js`
 
+## Screenshot
+
+![image](Output.png)
+
 ## Repository
 
 https://github.com/Varshith0708/WPAssignment-2
